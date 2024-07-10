@@ -16,4 +16,4 @@ steps:
   args: ['push', 'us-central1-docker.pkg.dev/kubernetes-assignment-428919/k8s-assignment/container2:latest']
  
 images:
-- 'us-central1-docker.pkg.dev/kubernetesassignment-417521/kubernetes-assignment/container-2:latest'
+- 'us-central1-docker.pkg.dev/kubernetes-assignment-428919/k8s-assignment/container2:latest'
