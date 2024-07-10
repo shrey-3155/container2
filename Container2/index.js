@@ -24,7 +24,7 @@ const cleanKey = (key) => key.trim().replace(/^['"]+|['"]+$/g, '');
 app.post('/sum', async (req, res) => {
     const inputData = req.body;
     const { file, data } = req.body;
-
+    console.log("Testing CICD");
 
     if (!inputData || !inputData.file || !inputData.product) {
         return res.json({
