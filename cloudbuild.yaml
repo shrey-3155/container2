@@ -14,6 +14,23 @@ steps:
     ]
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'us-central1-docker.pkg.dev/kubernetes-assignment-428919/k8s-assignment/container2:latest']
- 
+
+- name: 'gcr.io/cloud-builders/gcloud'
+  entrypoint: 'bash'
+  args:
+    - '-c'
+    - |
+      gcloud container clusters get-credentials k8s-assignment --zone us-central1-c --project kubernetes-assignment-428919
+      
+- name: 'gcr.io/cloud-builders/gcloud'
+  entrypoint: 'bash'
+  args:
+    - '-c'
+    - |
+      PROJECT=$$(gcloud config get-value core/project)          
+      gke-gcloud-auth-plugin --version
+      export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+      gcloud container clusters get-credentials k8s-assignment --zone us-central1-c --project kubernetes-assignment-428919 
+      kubectl apply -f container2-deployment.yaml 
 images:
 - 'us-central1-docker.pkg.dev/kubernetes-assignment-428919/k8s-assignment/container2:latest'
