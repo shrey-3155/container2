@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 // Persistent storage path
 const PERSISTENT_STORAGE_PATH = '/shrey_PV_dir';
 
-console.log("Testing Terraform file and podss");
+console.log("Testing for video");
 
 app.listen(PORT, () => {
     console.log(`Container 2 is listening on port ${PORT}`);
